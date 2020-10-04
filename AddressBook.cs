@@ -23,7 +23,6 @@ namespace AddressBookProblem
 
         public string nameOfAddressBook = " ";
 
-
         public string firstName;
         public string lastName;
         public string address;
@@ -74,6 +73,7 @@ namespace AddressBookProblem
 
                 ContactDetails addNewContact = new ContactDetails(firstName, lastName, address, city, state, zip, phoneNumber, email);
                 contactList.Add(addNewContact);
+                
                 Console.WriteLine("\nContact Was added to the contact list");
                 Console.WriteLine("Press y or Y to enter more Data OR Press any other word key to exit....");
                 ch = Convert.ToChar(Console.ReadLine());
@@ -164,6 +164,8 @@ namespace AddressBookProblem
                 Console.WriteLine(contactObj.firstName + "            " + contactObj.secondName + "            " + contactObj.address + "       " + contactObj.city + "      " + contactObj.state + "       " + contactObj.zip + "       " + contactObj.phoneNumber + "        " + contactObj.emailId);
             }
         }
+        
+            
     }
 }
 
