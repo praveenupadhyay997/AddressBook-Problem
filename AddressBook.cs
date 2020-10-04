@@ -127,6 +127,26 @@ namespace AddressBookProblem
             contactList[index].phoneNumber = phoneNumber;
             contactList[index].emailId = email;
         }
+
+        public void deleteDetails()
+        {
+            Console.WriteLine("Enter the first name of person whose data to be modified=");
+            firstName = Console.ReadLine();
+            Console.WriteLine("Enter the second name of person whose data to be modified=");
+            lastName = Console.ReadLine();
+
+            int index = 0;
+            foreach (var contactObj in this.contactList)
+            {
+
+                if ((firstName == contactObj.firstName) && (lastName == contactObj.secondName))
+                {
+                    break;
+                }
+                index++;
+            }
+            this.contactList.RemoveAt(index);
+        }
     }
 }
 
