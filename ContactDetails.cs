@@ -4,8 +4,12 @@ using System.Text;
 
 namespace AddressBookProblem
 {
+   
     class ContactDetails
     {
+        /// <summary>
+        /// contact PRoperties mentioned in the Use-Case
+        /// </summary>
         public string firstName;
         public string secondName;
         public string address;
@@ -15,6 +19,17 @@ namespace AddressBookProblem
         public long phoneNumber;
         public string emailId;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContactDetails"/> class.
+        /// </summary>
+        /// <param name="firstName">The first name.</param>
+        /// <param name="secName">Name of the sec.</param>
+        /// <param name="address">The address.</param>
+        /// <param name="city">The city.</param>
+        /// <param name="state">The state.</param>
+        /// <param name="zip">The zip.</param>
+        /// <param name="phoneNumber">The phone number.</param>
+        /// <param name="emailId">The email identifier.</param>
         public ContactDetails(string firstName, string secName, string address, string city, string state, long zip, long phoneNumber, string emailId)
         {
             this.firstName = firstName.ToLower();

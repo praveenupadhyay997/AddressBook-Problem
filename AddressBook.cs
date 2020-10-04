@@ -8,6 +8,9 @@ namespace AddressBookProblem
     {
         public List<ContactDetails> contactList = new List<ContactDetails>();
 
+        /// <summary>
+        /// Constants to be used when specific update is required
+        /// </summary>
         const int EDIT_FIRST_NAME = 1;
         const int EDIT_LAST_NAME = 2;
         const int EDIT_ADDRESS = 3;
@@ -17,8 +20,6 @@ namespace AddressBookProblem
         const int EDIT_PHONE_NUMBER = 7;
         const int EDIT_EMAIL = 8;
 
-
-        int contactSerialNum = 0;
 
         public string nameOfAddressBook = " ";
 
@@ -80,6 +81,9 @@ namespace AddressBookProblem
 
         }
 
+        /// <summary>
+        /// Edits the contact details.
+        /// </summary>
         public void editContactDetails()
         {
             int index = 0;
@@ -89,6 +93,17 @@ namespace AddressBookProblem
             Console.WriteLine("Enter the second name of person whose data to be modified=");
             lastName = Console.ReadLine();
 
+            
+
+            foreach (var contactObj in this.contactList)
+            {
+
+                if ((firstName == contactObj.firstName) && (lastName == contactObj.secondName))
+                {
+                    break;
+                }
+                index++;
+            }
             Console.WriteLine("Enter the modified data===>");
 
             Console.WriteLine("Enter the first name=");
@@ -107,16 +122,6 @@ namespace AddressBookProblem
             phoneNumber = Convert.ToInt64(Console.ReadLine());
             Console.WriteLine("Enter the emailId=");
             email = Console.ReadLine();
-
-            foreach (var contactObj in this.contactList)
-            {
-
-                if ((firstName == contactObj.firstName) && (lastName == contactObj.secondName))
-                {
-                    break;
-                }
-                index++;
-            }
 
             contactList[index].firstName = firstName;
             contactList[index].secondName = lastName;
@@ -146,6 +151,18 @@ namespace AddressBookProblem
                 index++;
             }
             this.contactList.RemoveAt(index);
+        }
+
+        /// <summary>
+        /// Displays the details.
+        /// </summary>
+        public void displayDetails()
+        {
+            Console.WriteLine("First Name  ----- Second Name ----- Addres ----- City ----- State ----- Zip ----- Phone Number ----- Email Id");
+            foreach (var contactObj in this.contactList)
+            {
+                Console.WriteLine(contactObj.firstName + "            " + contactObj.secondName + "            " + contactObj.address + "       " + contactObj.city + "      " + contactObj.state + "       " + contactObj.zip + "       " + contactObj.phoneNumber + "        " + contactObj.emailId);
+            }
         }
     }
 }
