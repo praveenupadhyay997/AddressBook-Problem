@@ -8,18 +8,6 @@ namespace AddressBookProblem
     {
         public List<ContactDetails> contactList = new List<ContactDetails>();
 
-        /// <summary>
-        /// Constants to be used when specific update is required
-        /// </summary>
-        const int EDIT_FIRST_NAME = 1;
-        const int EDIT_LAST_NAME = 2;
-        const int EDIT_ADDRESS = 3;
-        const int EDIT_CITY = 4;
-        const int EDIT_STATE = 5;
-        const int EDIT_ZIP = 6;
-        const int EDIT_PHONE_NUMBER = 7;
-        const int EDIT_EMAIL = 8;
-
 
         public string nameOfAddressBook = " ";
 
