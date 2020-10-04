@@ -1,47 +1,49 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace AddressBookProblem
 {
+    /// <summary>
+    /// Interface for The Entire address book
+    /// </summary>
+    public interface IAddressBook
+    {
+        void AddOrAccessAddressBook();
+        void ViewAllAddressBooks();
+        void DeleteAddressBook();
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the Name Of Address Book=");
-            string addressBookName = Console.ReadLine();
-            AddressBook addressBook = new AddressBook(addressBookName);
-        // Driving the Execution through menu guidation
-        Outer:
-            Console.WriteLine("******************************************");
-            Console.WriteLine("Welcome to the {0}'s Address Book",addressBookName);
-            Console.WriteLine("******************************************");
-            Console.WriteLine("1. Create A New Contact");
-            Console.WriteLine("2. Edit a contact");
-            Console.WriteLine("3. Delete a contact");
-            Console.WriteLine("4. Display Stored Contact");
-            Console.WriteLine("Press any Key to Exit!!!!!!!");
+
+            AddressBookDetail addressBookDetail = new AddressBookDetail();
+            // Driving the Execution through menu guidation
+            Outer:
+            Console.WriteLine("***************************");
+            Console.WriteLine("Welcome to the Address Book");
+            Console.WriteLine("****************************");
+            Console.WriteLine("1. Add or Access the Address Book");
+            Console.WriteLine("2. Display the present address Books");
+            Console.WriteLine("3. Delete the address book");
+            Console.WriteLine("Press any other Key to Exit!!!!!!!");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
             switch (choice)
             {
                 case 1:
-                    addressBook.AddContact();
+                    addressBookDetail.AddOrAccessAddressBook();
                     Console.Clear();
                     break;
 
                 case 2:
-                    addressBook.editContactDetails();
+                    addressBookDetail.ViewAllAddressBooks();
                     Console.Clear();
                     break;
 
                 case 3:
-                    addressBook.deleteDetails();
-                    Console.Clear();
-                    break;
-
-                case 4:
-                    addressBook.displayDetails();
-                    Console.ReadKey();
+                    addressBookDetail.DeleteAddressBook();
                     Console.Clear();
                     break;
 
@@ -51,7 +53,6 @@ namespace AddressBookProblem
 
             }
             goto Outer;
-
 
         }
     }
